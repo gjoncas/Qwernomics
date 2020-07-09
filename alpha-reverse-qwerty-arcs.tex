@@ -1,0 +1,20 @@
+\documentclass[border={0.1cm 0.1cm 0.1cm -1.25cm}]{standalone}  %E,S,W,N
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+%inspired by Amy Ireland's image in www.xenosystems.net/qwernomics
+
+\begin{document}
+	
+	\begin{tikzpicture}	
+	\def\s{0.45}	
+	\foreach \i [count=\j] in {A,...,Z} \node (\i) at (\s*\j,0) {\i};
+	\foreach \i [count=\j] in {M,N,B,V,C,X,Z,L,K,J,H,G,F,D,S,A,P,O,I,U,Y,T,R,E,W,Q}{
+		\node at ({26*\s+\s*\j},0) {\i};
+		\draw[xshift=\s] ({26*\s+\s*\j-0.25},0.2) to[out=135,in=45] (\i);
+	}
+	\end{tikzpicture}
+	
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[border={0.1cm 0.1cm 0.1cm 0.1cm}]{standalone}  %E,S,W,N
+%\documentclass{scrartcl}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\begin{document}
+	
+	\begin{tikzpicture}	
+	\foreach \i/\j/\k [count=\c from 0] in {A/Q/P,B/W/Y,C/E/F,D/R/G,E/T/C,F/Y/R,G/U/L,H/I/A,I/O/O,J/P/E, K/A/U,L/S/I,M/D/D,N/F/H,O/G/T,P/H/N,Q/J/S,R/K/Q,S/L/J,T/Z/K,U/X/X,V/C/B,W/V/M,X/B/W,Y/N/V,Z/M/Z}{
+	\node[rotate={-13.846*\c}] at ({3.5*cos(90-13.846*\c)},{3.5*sin(90-13.846*\c)}) {\i};
+	\node[rotate={-13.846*\c}] at ({3*cos(90-13.846*\c)},{3*sin(90-13.846*\c)}) {\j};
+	\node[rotate={-13.846*\c}] (D\k) at ({2.5*cos(90-13.846*\c)},{2.5*sin(90-13.846*\c)}) {\k};
+	}
+	
+	\foreach \i [count=\c from 0] in {Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Z,X,C,V,B,N,M}{
+	\draw[red] ({2*cos(90-13.846*\c)},{2*sin(90-13.846*\c)})--(D\i);
+	}
+	\end{tikzpicture}
+	
+\end{document}
